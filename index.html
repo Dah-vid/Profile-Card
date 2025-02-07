@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Profile Card</title> 
+</head>
+<body>
+    <div class="profile-card">
+        <div class="profile-header">
+            <img class="profile-picture" data-testid="profilePicture" src="./profile-picture.jpeg" alt="Profile Picture">
+            <h1 class="full-name" data-testid="fullName">David Okunfolami</h1>
+            <h2 class="job-title" data-testid="jobTitle">Software Developer</h2>
+        </div>
+
+        <p class="bio" data-testid="shortBio">  I am an enthusiastic software developer passionate about creating innovative solutions across multiple domains. With expertise in Web Development, Mobile Development, and Machine Learning, I strive to build applications that make a positive impact. I enjoy tackling complex problems and continuously learning new technologies. Currently focused on developing scalable web applications and exploring the intersection of AI and software development</p>
+
+        <div class="info-item" data-testid="currentLocation">
+            <i class="fas fa-map-marker-alt"></i>
+            Location: Edinburgh, UK
+        </div>
+
+        <div class="info-item" data-testid="emailAddress">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:david@gmail.com">Email: okunfolamidavid@gmail.com</a>
+        </div>
+
+        <div class="social-links" data-testid="socialLinks">
+            <a href="https://www.linkedin.com/in/davidokunfolami" title="LinkedIn">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="https://github.com/Dah-vid" title="GitHub">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="https://x.com/home?lang=en" title="Twitter">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+        </div>
+
+        <div class="time-utc" data-testid="currentTimeUTC">
+                Current UTC Time: <span id="utc-time"></span>
+        </div>
+    </div>
+        <script>
+            function updateUTCTime() {
+                const now = new Date();
+                const utcTimeString = now.toUTCString();
+                document.getElementById('utc-time').textContent = utcTimeString;
+            }
+            updateUTCTime();
+            setInterval(updateUTCTime, 1000);
+        </script>
+</body>
+</html>
